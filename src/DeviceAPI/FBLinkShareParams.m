@@ -38,17 +38,18 @@
 @end
 
 @implementation FBLinkShareParams
+@synthesize description;
 
 - (instancetype)initWithLink:(NSURL *)link
                         name:(NSString *)name
                      caption:(NSString *)caption
-                 description:(NSString *)description
+                 description:(NSString *)desc
                      picture:(NSURL *)picture {
   if ((self = [super init])) {
     self.link = link;
     self.name = name;
     self.caption = caption;
-    self.description = description;
+    self.description = desc;
     self.picture = picture;
   }
   return self;
@@ -59,7 +60,7 @@
     [_link release];
     [_name release];
     [_caption release];
-    [_description release];
+    [description release];
     [_picture release];
     [_friends release];
     [_place release];
